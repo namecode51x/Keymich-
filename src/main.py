@@ -13,7 +13,7 @@ dm.change()
 wl = Wallet(dm)
 
 # SoundManager
-sd = SoundManager("assets/keyboard_sounds/keyboardRed", "assets/keyboard_sounds")
+sd = SoundManager("assets/keyboard_sounds/Crimson", "assets/keyboard_sounds")
 sd.search_sounds()
 sd.search_keybords()
 sd.load_sound_special()
@@ -23,7 +23,6 @@ cl = Clickear(wl, sd)
 cl.start_helper()
 
 # Menu System
-
-Mn = Menu(sd, cl)
+Mn = Menu(sd, cl, wl)
 sd.start_app()
 Mn.mainloop()

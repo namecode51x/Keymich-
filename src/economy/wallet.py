@@ -6,12 +6,14 @@ class Wallet:
     def add(self, cantidad):
         self.balance += cantidad
         self.data.update_keychaps(self.balance)
+        self.counter.set(self.get_balance())
         self.data.save()
     # Resta la Cantidad de Keychaps
     def subtract(self, cantidad):
         if self.balance >= cantidad:
             self.balance -= cantidad
             self.data.update_keychaps(self.balance)
+            self.counter.set(self.get_balance())
             self.data.save()
             return True
         else:

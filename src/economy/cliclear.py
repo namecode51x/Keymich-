@@ -8,8 +8,7 @@ class Clickear:
         self.active = False
         self.list = []
 
-    # Enciende al Ayudante para que se quede con el bucle de lisent
-
+    #! Enciende al Ayudante para que se quede con el bucle de lisent
     def start_helper(self):
         if not self.active:
             self.active = True
@@ -17,8 +16,7 @@ class Clickear:
             self.helper.start()
             print("on")
 
-# Helper se quedara ejecutando este bucle infinitamente hasta que lo apaguemos colocando active en False
-
+#* Helper se quedara ejecutando este bucle infinitamente hasta que lo apaguemos colocando active en False
     def lisent(self):
         while self.active:
             self.keybord = keyboard.read_event()
@@ -29,8 +27,7 @@ class Clickear:
             elif self.keybord.event_type == 'up' and self.keybord.name in self.list:
                 self.list.remove(self.keybord.name)
 
-# Funciona para apagar a Helper
-
+#? Funciona para apagar a Helper
     def end_helper(self):
         self.active = False
         self.helper = None
